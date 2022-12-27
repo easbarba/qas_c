@@ -1,0 +1,63 @@
+*  Qas
+Easily manage multiple FLOSS repositories.
+
+** Usage
+Grab all projects locally:
+
+#+begin_src shell
+$ qas --grab
+#+end_src
+
+Archive selected projects at /$HOME/Downloads/archived/:
+
+#+begin_src shell
+$ qas --archive --name awesomewm,nuxt
+#+end_src
+
+** Configuration
+/qas/ looks for configuration files at /$XDG_CONFIG/qas/:
+
+$XDG_CONFIG/qas/misc.json
+#+begin_src json
+{
+   "lang": "misc",
+   "projects": [
+      {
+         "name": "awesomewm",
+         "branch": "master",
+         "url": "https://github.com/awesomeWM/awesome"
+      },
+      {
+         "name": "nuxt",
+         "branch": "main",
+         "url": "https://github.com/nuxt/framework"
+      },
+      {
+         "name": "swift_format",
+         "branch": "main",
+         "url": "https://github.com/apple/swift-format"
+      }
+   ]
+}
+#+end_src
+
+** Installation
+
+|            |                                        |
+|------------+----------------------------------------|
+| make       | preprocess, link and compile cpp files |
+| make clean | clean project and remove binary        |
+
+*** Dependencies
+- [[https://invent.kde.org/libraries/libqgit2][libqgit2]]
+- [[https://github.com/Tencent/rapidjson][rapidjson]]
+
+** TODO
+- more management utilities
+
+** History
+/qas/ initially was a module of a bigger package called /cejo/ extracted as
+standalone project to follow UNIX main rule: 'do one thing, well'.
+** License
+
+[[http:www.gnu.org/licenses/gpl-3.0.en.html][GPL-v3]]
