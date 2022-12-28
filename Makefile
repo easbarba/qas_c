@@ -27,9 +27,8 @@ $(OBJECTS): %.o : %.c
 clean:
 	@$(RM) $(OBJECTS)
 
-
 remove: clean
-	@$(RM) $(BINDIR)/$(TARGET)
+	@$(RM) $(TARGET)
 
 all: options dwm
 

@@ -1,16 +1,14 @@
+#include "main.h"
+#include "config.h"
+
 #include <getopt.h>
 #include <stdio.h>
-
-static void read();
-static void cli(int argc, char *argv[]);
 
 int main(int argc, char *argv[]) {
   cli(argc, argv);
 
   return 0;
 }
-
-static void read() { printf("meh"); }
 
 static void cli(int argc, char *argv[]) {
   struct option longy[] = {{"grab", no_argument, NULL, 'g'},
@@ -28,7 +26,7 @@ static void cli(int argc, char *argv[]) {
 
     switch (opt) {
     case 'g':
-      read();
+      read_file();
       break;
     case 'a':
       if (optarg) {
